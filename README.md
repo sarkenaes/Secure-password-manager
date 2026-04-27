@@ -23,7 +23,7 @@ I built this project to  apply different concepts I learnt in competetitons and 
 ## Project Structure
 
 ```text
-secure-password-toolkit/
+secure-password-manager/
 ├── app.py
 ├── checker.py
 ├── crypto_utils.py
