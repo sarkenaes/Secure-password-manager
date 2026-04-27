@@ -1,6 +1,6 @@
-# Secure Password Toolkit
+# Secure Password Manager
 
-Secure Password Toolkit is a small Python/Flask web application that combines a password strength checker with an encrypted password vault.
+Secure Password Manager is a small Python/Flask web application that combines a password strength checker with an encrypted password vault.
 
 ## Features
 
@@ -18,7 +18,7 @@ Secure Password Toolkit is a small Python/Flask web application that combines a 
 
 ## Why I built this
 
-I built this project to practice applying cybersecurity concepts in a real application. The goal was to go beyond a simple password checker and create a usable workflow: check a password first, then only allow stronger passwords to be stored securely.
+I built this project to practice applying different concepts I learnt in competetitons and in class such as pashword ahshing and cryptography. I wanted to create a practical tool thatc an show how password security works in real life. 
 
 ## Project Structure
 
@@ -81,7 +81,5 @@ http://127.0.0.1:5000
 ```
 
 ## Security Notes
-
-This is a learning project, not a production password manager. For production use, this would need stronger authentication, safer key management, deployment hardening, CSRF protection, and more secure secrets handling.
 
 The Have I Been Pwned check uses the k-anonymity model, meaning only the first five characters of the SHA-1 hash are sent to the API, not the full password.
