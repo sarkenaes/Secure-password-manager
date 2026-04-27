@@ -1,5 +1,3 @@
-"""SQLite database layer for encrypted vault entries."""
-
 import sqlite3
 from pathlib import Path
 from typing import List, Tuple
