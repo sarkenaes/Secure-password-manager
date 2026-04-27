@@ -1,8 +1,3 @@
-"""Secure Password Toolkit Flask app.
-
-Combines a password strength checker with an encrypted password manager.
-"""
-
 from flask import Flask, flash, redirect, render_template, request, url_for
 
 from checker import check_password_strength
