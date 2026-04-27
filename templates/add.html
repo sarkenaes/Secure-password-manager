@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="card">
+    <h1>Add Password to Vault</h1>
+    <p class="muted">The app checks the password first. Weak passwords are blocked from being saved.</p>
+
+    <form method="POST" class="form">
+        <label for="website">Website / Service</label>
+        <input type="text" id="website" name="website" placeholder="example.com" required>
+
+        <label for="username">Username / Email</label>
+        <input type="text" id="username" name="username" placeholder="user@example.com" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="notes">Notes</label>
+        <textarea id="notes" name="notes" rows="3" placeholder="Optional notes"></textarea>
+
+        <label class="checkbox">
+            <input type="checkbox" name="check_breaches" checked>
+            Check Have I Been Pwned breach database before saving
+        </label>
+
+        <button type="submit">Check & Save</button>
+    </form>
+</section>
+
+{% if result %}
+<section class="card result {{ result.strength }}">
+    <h2>Password Analysis: {{ result.strength|title }}</h2>
+    <p><strong>Entropy:</strong> {{ result.entropy }} bits</p>
+    <p><strong>Estimated crack time:</strong> {{ result.crack_time }}</p>
+    <ul>
+        {% for tip in result.tips %}
+            <li>{{ tip }}</li>
+        {% endfor %}
+    </ul>
+</section>
+{% endif %}
+{% endblock %}

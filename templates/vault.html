@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="card">
+    <h1>Encrypted Password Vault</h1>
+    <p class="muted">Websites and passwords are stored encrypted with Fernet. Usernames and notes are stored as plain text for readability.</p>
+
+    {% if entries %}
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Website</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                        <th>Notes</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for entry in entries %}
+                    <tr>
+                        <td>{{ entry[1] }}</td>
+                        <td>{{ entry[2] }}</td>
+                        <td><code>{{ entry[3] }}</code></td>
+                        <td>{{ entry[4] }}</td>
+                        <td>
+                            <form method="POST" action="{{ url_for('remove_password', entry_id=entry[0]) }}">
+                                <button class="danger" type="submit">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <p>No saved passwords yet.</p>
+    {% endif %}
+</section>
+{% endblock %}

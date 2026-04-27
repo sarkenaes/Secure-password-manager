@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="card">
+    <h1>Password Strength Checker</h1>
+    <p class="muted">Analyze password strength using entropy, character variety, a local wordlist, and optional breach checking.</p>
+
+    <form method="POST" class="form">
+        <label for="password">Password to check</label>
+        <input type="password" id="password" name="password" value="{{ password }}" required>
+
+        <label class="checkbox">
+            <input type="checkbox" name="check_breaches" checked>
+            Check Have I Been Pwned breach database
+        </label>
+
+        <button type="submit">Check Password</button>
+    </form>
+</section>
+
+{% if result %}
+<section class="card result {{ result.strength }}">
+    <h2>Result: {{ result.strength|title }}</h2>
+    <div class="grid">
+        <p><strong>Score:</strong> {{ result.score }}</p>
+        <p><strong>Entropy:</strong> {{ result.entropy }} bits</p>
+        <p><strong>Estimated crack time:</strong> {{ result.crack_time }}</p>
+        <p><strong>Dictionary match:</strong> {{ "Yes" if result.dictionary_match else "No" }}</p>
+    </div>
+
+    <h3>Feedback</h3>
+    <ul>
+        {% for tip in result.tips %}
+            <li>{{ tip }}</li>
+        {% endfor %}
+    </ul>
+</section>
+{% endif %}
+{% endblock %}
