@@ -1,10 +1,4 @@
 """Password strength checking logic.
-
-This module checks a password using several real-world signals:
-- length and character variety
-- estimated entropy and crack time
-- local dictionary/common-password check
-- optional Have I Been Pwned k-anonymity breach check
 """
 
 import hashlib
