@@ -1,6 +1,3 @@
-"""Password strength checking logic.
-"""
-
 import hashlib
 import math
 from pathlib import Path
