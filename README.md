@@ -18,7 +18,7 @@ Secure Password Manager is a small Python/Flask web application that combines a 
 
 ## Why I built this
 
-I built this project to  apply different concepts I learnt in competetitons and in class such as pasword hashing and cryptography. I wanted to create a practical tool that can show how password security works in real life. 
+I built this project to  apply different concepts I learnt in competitions and in class such as password hashing and cryptography. I wanted to create a practical tool that can show how password security works in real life. 
 
 ## Project Structure
 
