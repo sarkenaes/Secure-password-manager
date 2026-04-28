@@ -83,6 +83,6 @@ http://127.0.0.1:5000
 ## Security Notes
 
 The Have I Been Pwned check uses the k-anonymity model, meaning only the first five characters of the SHA-1 hash are sent to the API, not the full password.
-## ScreenShots of Demo
+##Demo
 ![Demo Screenshot](Images/Successfuldemo.png)
 
